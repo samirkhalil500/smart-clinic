@@ -38,7 +38,6 @@
       padding: 0 20px;
     }
 
-    /* شريط التنبيه العلوي والعداد */
     .top-bar {
       background: linear-gradient(90deg, #d97706, #f5a623);
       color: #000;
@@ -59,7 +58,6 @@
       letter-spacing: 1px;
     }
 
-    /* الهيدر */
     header {
       padding: 20px 0;
       border-bottom: 1px solid var(--border-color);
@@ -77,9 +75,8 @@
       gap: 8px;
     }
 
-    /* القسم الافتتاحي */
     .hero {
-      padding: 50px 0 30px;
+      padding: 50px 0 20px;
       text-align: center;
     }
 
@@ -110,10 +107,35 @@
       color: var(--text-muted);
       font-size: 1.1rem;
       max-width: 750px;
-      margin: 0 auto 30px;
+      margin: 0 auto 25px;
     }
 
-    /* أزرار CTA */
+    /* صندوق وتنسيق الفيديو */
+    .video-section {
+      max-width: 820px;
+      margin: 25px auto 35px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      background: #000;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .cta-btn {
       display: inline-block;
       background: var(--accent);
@@ -132,7 +154,6 @@
       transform: translateY(-2px);
     }
 
-    /* جدول الميزات */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -159,7 +180,6 @@
       font-size: 0.9rem;
     }
 
-    /* كروت الأسعار */
     .pricing-section {
       padding: 40px 0;
       text-align: center;
@@ -263,7 +283,6 @@
       background: #1eb855;
     }
 
-    /* زر الواتساب العائم */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
@@ -299,7 +318,6 @@
 </head>
 <body>
 
-  <!-- شريط العد التنازلي -->
   <div class="top-bar">
     ⚡ عرض ترويجي خاص لفترة محدودة (خصم يصل إلى 90%): 
     <span class="timer-badge" id="countdown">23:59:59</span>
@@ -307,21 +325,29 @@
   </div>
 
   <div class="container">
-    <!-- الهيدر -->
     <header>
       <div class="logo">⚡ منظومة الاستشفاء الذكية</div>
       <a href="https://wa.me/201501910649?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%A7%D9%84%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9" target="_blank" class="cta-btn" style="padding: 8px 18px; font-size: 0.9rem;">تواصل واتساب</a>
     </header>
 
-    <!-- القسم الرئيسي -->
     <section class="hero">
       <div class="hero-badge">نظام إدارة باقات الجلسات والريكفري والحجامة</div>
       <h1>أدر مركزك وفروعك سحابياً.. <br><span>بخصم استثنائي 90%</span> يبدأ من 35 ج.م فقط!</h1>
       <p>توقف عن إهدار الوقت في الدفاتر الورقية وحسابات الباقات المعقدة. احصل على نظام سحابي يربط فروعك ويخصم جلسات عملائك بثانية واحدة عبر كود QR.</p>
+      
+      <!-- فيديو النظام المرفوع -->
+      <div class="video-section">
+        <div class="video-wrapper">
+          <video controls playsinline preload="metadata">
+            <source src="clinic-demo.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل هذا الفيديو مباشرة.
+          </video>
+        </div>
+      </div>
+
       <a href="#pricing" class="cta-btn">احجز نسختك التجريبية الآن</a>
     </section>
 
-    <!-- المزايا -->
     <div class="features-grid">
       <div class="feature-card">
         <h3>⚡ خصم الجلسة بكود QR</h3>
@@ -341,13 +367,11 @@
       </div>
     </div>
 
-    <!-- باقات الأسعار -->
     <section class="pricing-section" id="pricing">
       <h2 class="pricing-title">اختر باقة العرض الأنسب لمركزك</h2>
       <p class="renewal-note">🎁 ميزة إضافية: اشتراكك الآن يضمن لك تجديداً مستقبلياً بخصم دائم 50%!</p>
 
       <div class="pricing-grid">
-        <!-- باقة شهري فرع واحد -->
         <div class="pricing-card">
           <span class="ribbon">خصم 90%</span>
           <h3>الاشتراك الشهري</h3>
@@ -365,7 +389,6 @@
           <a href="https://wa.me/201501910649?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%B4%D9%87%D8%B1%D9%8A%20(35%20%D8%AC.%D9%85)" target="_blank" class="price-btn">اطلب الباقة عبر واتساب</a>
         </div>
 
-        <!-- باقة سنوي فرع واحد -->
         <div class="pricing-card featured">
           <span class="ribbon">الأكثر توفيراً - 90%</span>
           <h3>الاشتراك السنوي</h3>
@@ -383,7 +406,6 @@
           <a href="https://wa.me/201501910649?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%B3%D9%86%D9%88%D9%8A%20%D9%81%D8%B1%D8%B9%20%D9%88%D8%A7%D8%AD%D8%AF%20(350%20%D8%AC.%D9%85)" target="_blank" class="price-btn" style="background: var(--accent); color: #000;">احجز العرض السنوي</a>
         </div>
 
-        <!-- باقة سنوي فرعين -->
         <div class="pricing-card">
           <span class="ribbon">خصم 90%</span>
           <h3>الاشتراك السنوي</h3>
@@ -403,18 +425,15 @@
       </div>
     </section>
 
-    <!-- الفوتر -->
     <footer>
       <p>منظومة الاستشفاء والعيادة الذكية © 2026. تطبق شروط وقواعد العروض الترويجية لفترة محدودة.</p>
     </footer>
   </div>
 
-  <!-- زر واتساب العائم -->
   <a href="https://wa.me/201501910649?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9%20%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D8%A7%D9%84%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9" class="whatsapp-float" target="_blank" title="تواصل عبر واتساب">
     💬
   </a>
 
-  <!-- سكربت العداد التنازلي التفاعلي -->
   <script>
     let hours = 23, minutes = 59, seconds = 59;
     const timerElement = document.getElementById('countdown');
