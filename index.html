@@ -455,6 +455,24 @@
       const s = seconds < 10 ? '0' + seconds : seconds;
       timerElement.textContent = `${h}:${m}:${s}`;
     }, 1000);
-  </script>
+  // كود لقراءة رقم الواتساب تلقائياً من الرابط
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const customPhone = params.get('phone');
+    if (customPhone) {
+      const cleanPhone = customPhone.replace(/[^0-9]/g, '');
+      const links = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
+      links.forEach(link => {
+        try {
+          const url = new URL(link.href);
+          const currentText = url.searchParams.get('text') || '';
+          link.href = `https://wa.me/${cleanPhone}${currentText ? '?text=' + encodeURIComponent(currentText) : ''}`;
+        } catch (e) {
+          link.href = `https://wa.me/${cleanPhone}`;
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
